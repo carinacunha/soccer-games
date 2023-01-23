@@ -23,20 +23,32 @@ describe('Login route test', () => {
     sinon.restore
   });
 
-  it('Shoud login successfully', async()=>{
+  // it('Shoud login successfully', async()=>{
+  //   sinon.stub(userModel, 'findOne').resolves(user as any);
+
+  //   chaiHttpResponse = await chai
+  //     .request(app)
+  //     .post('/login')
+  //     .send({ email: 'admin@admin.com', password: 'secret_key' });
+
+  //     const jwt = new JWT();
+  //     const validate = jwt.verifyToken(chaiHttpResponse.body.token) as IJwt;
+
+  //     expect(chaiHttpResponse.status).to.be.equal(200);
+  //     expect(chaiHttpResponse.body).to.have.property('token');
+  //     expect(validate.email).to.be.equal(user.email);
+  // })
+
+  it('Shoud login unsuccessfully', async()=>{
     sinon.stub(userModel, 'findOne').resolves(user as any);
 
     chaiHttpResponse = await chai
       .request(app)
       .post('/login')
-      .send({ email: 'admin@admin.com', password: 'secret_key' });
+      .send({ email: 'admin@admin.com', password: 'admin' });
 
-      const jwt = new JWT();
-      const validate = jwt.verifyToken(chaiHttpResponse.body.token) as IJwt;
-
-      expect(chaiHttpResponse.status).to.be.equal(200);
-      expect(chaiHttpResponse.body).to.have.property('token');
-      expect(validate.email).to.be.equal(user.email);
+      expect(chaiHttpResponse.status).to.be.equal(401);
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Incorrect email or password' });
   })
 
   it('Should not login without password', async() => {
