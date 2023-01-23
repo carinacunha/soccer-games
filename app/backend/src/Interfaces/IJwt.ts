@@ -1,4 +1,4 @@
-export interface JWT {
+export default interface JWT {
   email: string,
   password: string,
   iat: number,
