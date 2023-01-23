@@ -15,4 +15,16 @@ export default class MatchesService {
     });
     return response;
   }
+
+  public async getInProgress() {
+    const allMatches = await this.getAll();
+    const matchesInProgress = allMatches.filter((match) => match.inProgress === true);
+    return matchesInProgress;
+  }
+
+  public async getFinished() {
+    const allMatches = await this.getAll();
+    const matchesFinished = allMatches.filter((match) => match.inProgress === false);
+    return matchesFinished;
+  }
 }
