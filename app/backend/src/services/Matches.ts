@@ -29,6 +29,10 @@ export default class MatchesService {
   }
 
   public async changeToFinish(id: number) {
-    await this._matchesModel.update({ inProgress: false }, { where: { id } });
+    await this._matchesModel.update({ inProgress: 0 }, { where: { id } });
+  }
+
+  public async updatePoints(id: number, homeTeamGoals: number, awayTeamGoals: number) {
+    await this._matchesModel.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
   }
 }

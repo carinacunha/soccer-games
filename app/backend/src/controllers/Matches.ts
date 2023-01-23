@@ -25,4 +25,12 @@ export default class MatchesController {
     await this._serviceMatches.changeToFinish(idNumber);
     return res.status(200).json({ message: 'Finished' });
   };
+
+  public updatePoints: RequestHandler = async (req, res) => {
+    const { id } = req.params;
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+    const idNumber = parseInt(id, 10);
+    await this._serviceMatches.updatePoints(idNumber, homeTeamGoals, awayTeamGoals);
+    return res.status(200).json({ message: 'Match updated' });
+  };
 }
