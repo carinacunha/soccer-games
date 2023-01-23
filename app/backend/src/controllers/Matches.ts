@@ -18,4 +18,11 @@ export default class MatchesController {
     const allMatches = await this._serviceMatches.getAll();
     return res.status(200).json(allMatches);
   };
+
+  public changeToFinish: RequestHandler = async (req, res) => {
+    const { id } = req.params;
+    const idNumber = parseInt(id, 10);
+    await this._serviceMatches.changeToFinish(idNumber);
+    return res.status(200).json({ message: 'Finished' });
+  };
 }
