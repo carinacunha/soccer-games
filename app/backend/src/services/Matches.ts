@@ -1,3 +1,4 @@
+import IMatchesSave from '../Interfaces/IMatchesSave';
 import MatchesModel from '../database/models/Matches';
 import TeamsModel from '../database/models/Teams';
 
@@ -20,6 +21,17 @@ export default class MatchesService {
     const allMatches = await this.getAll();
     const matchesInProgress = allMatches.filter((match) => match.inProgress === true);
     return matchesInProgress;
+  }
+
+  public async saveMatches({ homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals }: IMatchesSave) {
+    const allMatches = await this.getAll();
+    const homeTeam = allMatches.find((elem) => elem.id === homeTeamId);
+    const awayTeam = allMatches.find((elem) => elem.id === awayTeamId);
+    if (!homeTeam || !awayTeam) return undefined;
+    const matchesSaved = await this._matchesModel.create(
+      { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals, inProgress: true },
+    );
+    return matchesSaved;
   }
 
   public async getFinished() {

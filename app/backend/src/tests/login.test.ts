@@ -29,7 +29,7 @@ describe('Login route test', () => {
   //   chaiHttpResponse = await chai
   //     .request(app)
   //     .post('/login')
-  //     .send({ email: 'admin@admin.com', password: 'secret_key' });
+  //     .send({ email: 'admin@admin.com', password: 'secret_admin' });
 
   //     const jwt = new JWT();
   //     const validate = jwt.verifyToken(chaiHttpResponse.body.token) as IJwt;

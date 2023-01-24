@@ -19,6 +19,13 @@ export default class MatchesController {
     return res.status(200).json(allMatches);
   };
 
+  public saveMatches: RequestHandler = async (req, res) => {
+    const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
+    const matchesSaved = await this._serviceMatches
+      .saveMatches({ homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals });
+    return res.status(201).json(matchesSaved);
+  };
+
   public changeToFinish: RequestHandler = async (req, res) => {
     const { id } = req.params;
     const idNumber = parseInt(id, 10);
