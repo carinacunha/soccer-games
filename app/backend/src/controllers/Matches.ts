@@ -21,6 +21,10 @@ export default class MatchesController {
 
   public saveMatches: RequestHandler = async (req, res) => {
     const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
+    if (homeTeamId === awayTeamId) {
+      return res.status(422)
+        .json({ message: 'It is not possible to create a match with two equal teams' });
+    }
     const matchesSaved = await this._serviceMatches
       .saveMatches({ homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals });
     return res.status(201).json(matchesSaved);
