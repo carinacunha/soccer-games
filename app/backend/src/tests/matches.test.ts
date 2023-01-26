@@ -5,7 +5,7 @@ import chaiHttp = require('chai-http');
 
 import { app } from '../app';
 import matchesModel from '../database/models/Matches';
-import { matches, addToMatches, matchAdd } from './mocks/matches.mocks';
+import { matches } from './mocks/matches.mocks';
 
 import { Response } from 'superagent';
 

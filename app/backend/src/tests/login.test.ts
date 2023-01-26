@@ -6,10 +6,9 @@ import chaiHttp = require('chai-http');
 import { app } from '../app';
 import * as jwt from 'jsonwebtoken';
 import userModel from '../database/models/Users';
-import { user, infos, token } from './mocks/login.mocks';
-import JWT from '../middlewares/JWT';
-import IJwt from '../Interfaces/IJwt';
-
+import { token, userLogin, invalidToken, user } from './mocks/login.mocks';
+import {before, after} from 'mocha';
+import Users from'../database/models/Users';
 
 import { Response } from 'superagent';
 
@@ -28,24 +27,24 @@ describe('Login route test', () => {
     sinon.restore
   });
 
-  // it('Shoud login successfully', async()=>{
-  //   sinon.stub(userModel, 'findOne').resolves(user as any);
+  it('Shoud login successfully', async() => {
+    sinon.stub(userModel, 'findOne').resolves(userLogin as any);
 
-  //   chaiHttpResponse = await chai
-  //     .request(app)
-  //     .post('/login')
-  //     .send({ email: 'admin@admin.com', password: 'secret_admin' });
+    chaiHttpResponse = await chai
+      .request(app)
+      .post('/login')
+      .send({ email: 'admin@admin.com', password: 'secret_admin' });
 
-  //     const jwt = new JWT();
-  //     const validate = jwt.verifyToken(chaiHttpResponse.body.token) as IJwt;
+      const { token } = chaiHttpResponse.body;
 
-  //     expect(chaiHttpResponse.status).to.be.equal(200);
-  //     expect(chaiHttpResponse.body).to.have.property('token');
-  //     expect(validate.email).to.be.equal(user.email);
-  // })
+      expect(chaiHttpResponse.body).to.have.property('token');
+      expect(token).to.be.contains(token);
+      expect(chaiHttpResponse.status).to.be.equal(200);
+      
+  })
 
-  it('Shoud login unsuccessfully with wrong password', async()=>{
-    sinon.stub(userModel, 'findOne').resolves(user as any);
+
+  it('Shoud login unsuccessfully with wrong password', async() => {
 
     chaiHttpResponse = await chai
       .request(app)
@@ -57,7 +56,7 @@ describe('Login route test', () => {
       
   })
 
-  it('Shoud login unsuccessfully with wrong user', async()=>{
+  it('Shoud login unsuccessfully with wrong user', async() => {
     chaiHttpResponse = await chai
       .request(app)
       .post('/login')
@@ -98,4 +97,17 @@ describe('Login route test', () => {
     expect( chaiHttpResponse.body).to.be.deep.equal({ message: 'Token not found'});
   });
 
+  it('Should validate the correct token', async () => {
+    chaiHttpResponse = await chai
+      .request(app)
+      .get('/login/validate')
+      .set('Authorization', token);
+
+      const { body, status } = chaiHttpResponse;
+
+      expect(body.role).to.be.equal('admin');
+      expect(status).to.be.equal(200);
+  });
+
 });
+
