@@ -6,4 +6,13 @@ export const user = {
   password: 'secret_admin'
 }
 
-export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDdzdkMwTDkyb0ZwY1V4cDVSMXY4cXVFd3VBQnVrQlpBZzZtRlRpLzQxSDkxV2pMOWhSRVYuIiwiaWF0IjoxNjc0NTYzNjE5LCJleHAiOjE2NzQ5OTU2MTl9.AaRVR7GMZlVJwCjqjmiL79s-pyrpclqjwdyA3TwWCQY"
+export const tokenResp = {
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFAxeTl0MnlaODB4c2pxeFVmL3h1NXVIUDdydmlHdzNuTmhBUHhSbnFQTDFwY1N3ZUtXZHguIiwiaWF0IjoxNjc0NTg5MjEwLCJleHAiOjE2NzUwMjEyMTB9.q0AKU5rwfKam039AnTmL1hg_91elPXE4gh6oba0a2x4"
+} 
+
+export const infos = {
+  email: 'admin@admin.com',
+  password: 'secret_admin',
+}
+
+export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFAxeTl0MnlaODB4c2pxeFVmL3h1NXVIUDdydmlHdzNuTmhBUHhSbnFQTDFwY1N3ZUtXZHguIiwiaWF0IjoxNjc0NTg5MjEwLCJleHAiOjE2NzUwMjEyMTB9.q0AKU5rwfKam039AnTmL1hg_91elPXE4gh6oba0a2x4"
