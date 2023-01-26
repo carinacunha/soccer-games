@@ -89,12 +89,12 @@ describe('Login route test', () => {
   it('Should return error without token', async () => {
     sinon.stub(jwt, 'verify').resolves({role: 'user'} as any);
 
-    const  chaiHttpResponse = await chai
+    const chaiHttpResponse = await chai
     .request(app)
     .get('/login/validate');
 
-    expect( chaiHttpResponse.status).to.be.equal(400);
-    expect( chaiHttpResponse.body).to.be.deep.equal({ message: 'Token not found'});
+    expect(chaiHttpResponse.status).to.be.equal(400);
+    expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Token not found'});
   });
 
   it('Should validate the correct token', async () => {
