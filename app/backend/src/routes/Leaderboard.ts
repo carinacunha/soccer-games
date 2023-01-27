@@ -7,5 +7,6 @@ const controller = new LearderController();
 
 router.get('/home', controller.getHomeLeaderboard);
 router.get('/away', controller.getAwayLeaderboard);
+router.get('/', controller.getLeaderboardRank);
 
 export default router;

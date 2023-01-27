@@ -5,6 +5,7 @@ import {
   scoreboardTeamAway,
   scoreboardTeamHome,
   classification,
+  createLeaderboard,
 } from '../middlewares/leaderboards';
 
 export default class LeaderboardService {
@@ -48,5 +49,23 @@ export default class LeaderboardService {
 
     const teamsData = await Promise.all(awayTeams);
     return classification(teamsData);
+  }
+
+  public async getLeaderboardRank() {
+    const leaderboardHome = await this.getLeaderboardsHome();
+    const leaderboardAway = await this.getLeaderboardsAway();
+
+    const leaderboard = createLeaderboard(leaderboardHome, leaderboardAway);
+
+    const leaderboardRank = leaderboard.sort((teamX, teamY) => {
+      if (!teamX || !teamY) return -1;
+      return teamY.totalPoints - teamX.totalPoints
+      || teamY.totalVictories - teamX.totalVictories
+      || teamY.goalsBalance - teamX.goalsBalance
+      || teamY.goalsFavor - teamX.goalsFavor
+      || teamY.goalsOwn - teamX.goalsOwn;
+    });
+
+    return leaderboardRank;
   }
 }

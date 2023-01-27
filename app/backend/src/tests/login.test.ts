@@ -6,9 +6,7 @@ import chaiHttp = require('chai-http');
 import { app } from '../app';
 import * as jwt from 'jsonwebtoken';
 import userModel from '../database/models/Users';
-import { token, userLogin, invalidToken, user } from './mocks/login.mocks';
-import {before, after} from 'mocha';
-import Users from'../database/models/Users';
+import { token, userLogin } from './mocks/login.mocks';
 
 import { Response } from 'superagent';
 
@@ -17,9 +15,6 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 describe('Login route test', () => {
-  
-  const role = {role: 'user'};
-  
 
   let chaiHttpResponse: Response;
 
@@ -42,7 +37,6 @@ describe('Login route test', () => {
       expect(chaiHttpResponse.status).to.be.equal(200);
       
   })
-
 
   it('Shoud login unsuccessfully with wrong password', async() => {
 

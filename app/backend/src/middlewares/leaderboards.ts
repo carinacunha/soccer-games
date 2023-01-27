@@ -119,8 +119,27 @@ const classification = (matches: ILeaderboard[]) => matches.sort((teamX, teamY) 
   || teamX.goalsOwn - teamY.goalsOwn
 ));
 
+const createLeaderboard = (homeLeader: ILeaderboard[], awayLeader: ILeaderboard[]) => awayLeader
+  .map((elem) => {
+    const equals = homeLeader.find((el) => el.name === elem.name);
+    if (!equals) return;
+    return {
+      ...elem,
+      totalPoints: elem.totalPoints + equals.totalPoints,
+      totalGames: elem.totalGames + equals.totalGames,
+      totalVictories: elem.totalVictories + equals.totalVictories,
+      totalDraws: elem.totalDraws + equals.totalDraws,
+      totalLosses: elem.totalLosses + equals.totalLosses,
+      goalsFavor: elem.goalsFavor + equals.goalsFavor,
+      goalsOwn: elem.goalsOwn + equals.goalsOwn,
+      goalsBalance: elem.goalsBalance + equals.goalsBalance,
+      efficiency: (((elem.totalPoints + equals.totalPoints)
+      / ((elem.totalGames + equals.totalGames) * 3)) * 100).toFixed(2) };
+  });
+
 export {
   scoreboardTeamHome,
   scoreboardTeamAway,
   classification,
+  createLeaderboard,
 };
