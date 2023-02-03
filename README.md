@@ -1,4 +1,4 @@
-# ⚽ Rank Soccer #
+# ✨ Rank Soccer #
 ![alt app](soccer_1.png "screen app")
 ![alt app](soccer_2.png "screen app")
 
@@ -39,7 +39,7 @@ The application consists of a ranking table of football teams, in which, through
 * GET /leaderboard/away
   Responsible for returning the league leaders away from home
 
-## 🛠 Skills and Tools ##
+## Skills and Tools ##
 
 * Application integration using Docker 🐳;
 * Using environment variables;
@@ -56,9 +56,10 @@ The application consists of a ranking table of football teams, in which, through
 ## :bulb: Guidelines to runnig API ##
 1. Clone the repository 
   - https://github.com/carinacunha/rank-soccer
-  - Go into the repository folder you just cloned
-2. Install the dependencies: npm install
-3. Up the containers: docker compose up -d
-4. To runnig tests: npm run test
+2. Navigate to the root of the repository: cd trybe-football-club
+3. Install the dependencies: npm install
+4. Navigate to app/: cd app/
+5. Initialize the Docker containers: np run compose:up:dev
+6. To runnig tests: npm run test
 
 **:point_right: This project was developed during the Full Stack Web Development course at Trybe**
