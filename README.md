@@ -57,9 +57,9 @@ The application consists of a ranking table of football teams, in which, through
 1. Clone the repository 
   https://github.com/carinacunha/rank-soccer
 2. Navigate to the root of the repository: 
-``` cd trybe-football-club ```
+```cd trybe-football-club ```
 4. Install the dependencies: 
-``` npm install ```
+```npm install ```
 5. Navigate to app/: 
 ``` cd app/ ```
 7. Initialize the Docker containers: 
