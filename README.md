@@ -67,4 +67,4 @@ The application consists of a ranking table of football teams, in which, through
 8. Run tests:
 ```npm run test```
 
-**:point_right: This project was developed during the Full Stack Web Development course at Trybe**
+**✨ This project was developed during the Full Stack Web Development course at Trybe**
