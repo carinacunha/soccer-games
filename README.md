@@ -43,7 +43,7 @@ The application consists of a ranking table of football teams, in which, through
 
 * Application integration using Docker 🐳;
 * Using environment variables;
-* Write APIs using Node and Express;
+* Write APIs using TypeScript, Node js. and Express;
 * Develop the Back-end of the application using the MSC model;
 * User authentication using JSON Web Token and bcryptjs;
 * Create routes and apply middlewares;
