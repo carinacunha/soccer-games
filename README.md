@@ -41,7 +41,7 @@ The application consists of a ranking table of football teams, in which, through
 
 ## Skills and Tools ##
 
-* Application integration using Docker 🐳;
+* Application integration using Docker;
 * Using environment variables;
 * Write APIs using TypeScript, Node js. and Express;
 * Develop the Back-end of the application using the MSC model;
@@ -53,7 +53,7 @@ The application consists of a ranking table of football teams, in which, through
 * Create integrated tests using Jest, Mocha, Chai and Sinon libraries;
 * Use Docker to integrate the Full Stack application;
 
-## :bulb: Guidelines to runnig API ##
+## Guidelines to runnig API ##
 1. Clone the repository 
   https://github.com/carinacunha/rank-soccer
 2. Navigate to the root of the repository: 
