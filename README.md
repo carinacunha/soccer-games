@@ -55,15 +55,10 @@ The application consists of a ranking table of football teams, in which, through
 
 ## Guidelines to runnig API ##
 1. Clone the repository: ```git clone git@github.com:carinacunha/rank-soccer.git```
-2. Navigate to the root of the repository: 
-```cd trybe-football-club ```
-4. Install the dependencies: 
-```npm install ```
-5. Navigate to app/: 
-``` cd app/ ```
-7. Initialize the Docker containers: 
-```np run compose:up:dev```
-8. Run tests:
-```npm run test```
+2. Navigate to the root of the repository: ```cd rank-soccer```
+4. Install the dependencies: ```npm install ```
+5. Navigate to app/: ```cd app/ ```
+6. Initialize the Docker containers: ```np run compose:up:dev```
+7. Run tests: ```npm run test```
 
 **✨ This project was developed during the Full Stack Web Development course at Trybe**
