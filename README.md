@@ -54,8 +54,7 @@ The application consists of a ranking table of football teams, in which, through
 * Use Docker to integrate the Full Stack application;
 
 ## Guidelines to runnig API ##
-1. Clone the repository:
-  ```git clone git@github.com:carinacunha/rank-soccer.git```
+1. Clone the repository: ```git clone git@github.com:carinacunha/rank-soccer.git```
 2. Navigate to the root of the repository: 
 ```cd trybe-football-club ```
 4. Install the dependencies: 
