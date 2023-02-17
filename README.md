@@ -55,7 +55,7 @@ The application consists of a ranking table of football teams, in which, through
 
 ## Guidelines to runnig API ##
 1. Clone the repository 
-  https://github.com/carinacunha/rank-soccer
+  git@github.com:carinacunha/rank-soccer.git
 2. Navigate to the root of the repository: 
 ```cd trybe-football-club ```
 4. Install the dependencies: 
