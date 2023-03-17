@@ -2,10 +2,13 @@
 ![alt app](soccer_1.png "screen app")
 ![alt app](soccer_2.png "screen app")
 
+## Aim ##
+
 In this project, the Back-End part of an informative website about football games was created! The project is fullstack and the integration between Back-end, Front-end and database is done using docker-compose.
 The application consists of a ranking table of football teams, in which, through user validation via login, it is possible to query and change match data, insert new matches, finalize ongoing matches, consult the general classification and classification of teams in the home and away teams.
 
 ## Routes ##
+
 1️⃣ User Routes:
 
 * POST /login
@@ -54,6 +57,7 @@ The application consists of a ranking table of football teams, in which, through
 * Use Docker to integrate the Full Stack application;
 
 ## Guidelines to runnig API ##
+
 1. Clone the repository: ```git clone git@github.com:carinacunha/rank-soccer.git```
 2. Navigate to the root of the repository: ```cd rank-soccer```
 4. Install the dependencies: ```npm install ```
