@@ -1,4 +1,4 @@
-# Rank Soccer #
+# Soccer Games #
 ![alt app](soccer_1.png "screen app")
 ![alt app](soccer_2.png "screen app")
 
