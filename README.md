@@ -4,8 +4,60 @@
 
 ## About ##
 
-In this project, the Back-End part of an informative website about football games was created! The project is fullstack and the integration between Back-end, Front-end and database is done using docker-compose.
-The application consists of a ranking table of football teams, in which, through user validation via login, it is possible to query and change match data, insert new matches, finalize ongoing matches, consult the general classification and classification of teams in the home and away teams.
+It is a FullStack application composed of three services, Front-End, Back-end and database.
+
+The soccer Games application consists of a football schedules ranking table, in which, through user validation via login, it is possible to consult and change match data, insert new matches, finalize ongoing matches, consult the general classification and Classify home schedules and away schedules.
+
+## Stacks ##
+
+### :whale: Docker ###
+To ensure that the application would run in a standard way, regardless of the environment, the Docker tool was used to package the application services (Front-End, Back-end and database) in containers (segregation of processes in the same kernel).
+These containers were created from an “image” that had its creation defined in the Dockerfile file of each service.
+
+### Front End ###
+
+* Programming language:
+  * **JavaScript**
+     * Compatibility with most modern browsers;
+     * High availability of resources;
+         
+* Frameworks
+  * **React:** JavaScript library used to create dynamic and responsive user interface;
+  * **ContextAPI**: to manage the global state of the application;
+  * **Axions**: HTTP client based on a simple promise for navegador and node.js, used to make requests transit between the Front and back-End.
+
+## Backend ##
+
+* Programming language:
+  * **JavaScript**;
+  * **TypeScript**: to add static typing to JavaScript.
+     
+* JS interpreter outside the browser
+  * **Node.js**
+    
+* Frameworks and libraries
+  * **Express**: framework that receives requests and sends responses;
+  * **JSonWebToken**: library used to make a token and validate it, ensuring user authentication;
+  * **bcrypt**: library used to encrypt passwords;
+  * **Chai**: library used to make assertions in application tests;
+  * **Sinon**: framework used to mock functions that will be used in application testing;
+     
+* Principles and concepts
+  * API REST
+    * **REST**: respects a standard for transferring information, API organized in a way that it serves clients by managing their HTTP requests,              between one request and another, the API does not store client information, repeated requests can be optimized, as they return the same results          and layered system.
+
+  * Software architecture
+    * **MSC** (Model-Service-Controller): where the application is separated into 3 layers being the data model, business logic and data presentation.
+
+  * Structuring and organization of the code:
+       * **Object Oriented Programming (OOP)**: programming paradigm based on the concept of objects to organize and structure the code in an organized         and scalable way;
+       * **SOLID**: set of object-oriented design principles for creating cleaner and more modular code.
+
+  * Database:
+       * **MySQL**: relational database management system;
+       * **Sequelize**: library used in Node js to do database mapping.
+
+  * Environment variables: to hide access credentials, software behavior settings or other sensitive or relevant information that does not require the        code to be changed.
 
 ## Routes ##
 
@@ -42,19 +94,6 @@ The application consists of a ranking table of football teams, in which, through
 * GET /leaderboard/away
   Responsible for returning the league leaders away from home
 
-## Skills and Tools ##
-
-* Application integration using Docker;
-* Using environment variables;
-* Write APIs using TypeScript, Node js. and Express;
-* Develop the Back-end of the application using the MSC model;
-* User authentication using JSON Web Token and bcryptjs;
-* Create routes and apply middlewares;
-* Use ORM Sequelize to CRUD the database;
-* Use the Object Oriented Paradigm (OOP);
-* Use the SOLID principle;
-* Create integrated tests using Jest, Mocha, Chai and Sinon libraries;
-* Use Docker to integrate the Full Stack application;
 
 ## Guidelines to runnig API ##
 
