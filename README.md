@@ -97,8 +97,8 @@ These containers were created from an “image” that had its creation defined 
 
 ## Guidelines to runnig API ##
 
-1. Clone the repository: ```git clone git@github.com:carinacunha/rank-soccer.git```
-2. Navigate to the root of the repository: ```cd rank-soccer```
+1. Clone the repository: ```git clone git@github.com:carinacunha/soccer-games.git```
+2. Navigate to the root of the repository: ```cd soccer-games```
 4. Install the dependencies: ```npm install ```
 5. Navigate to app/: ```cd app/ ```
 6. Initialize the Docker containers: ```np run compose:up:dev```
