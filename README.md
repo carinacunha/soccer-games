@@ -101,7 +101,7 @@ These containers were created from an “image” that had its creation defined 
 2. Navigate to the root of the repository: ```cd soccer-games```
 4. Install the dependencies: ```npm install ```
 5. Navigate to app/: ```cd app/ ```
-6. Initialize the Docker containers: ```np run compose:up:dev```
+6. Initialize the Docker containers: ```npm run compose:up:dev```
 7. Run tests: ```npm run test```
 
 **✨ This project was developed during the Full Stack Web Development course at Trybe**
