@@ -102,6 +102,11 @@ These containers were created from an “image” that had its creation defined 
 4. Install the dependencies: ```npm install ```
 5. Navigate to app/: ```cd app/ ```
 6. Initialize the Docker containers: ```npm run compose:up:dev```
-7. Run tests: ```npm run test```
+7. Navigate to app/: ```cd frontend/ ```
+8. Install the dependencies: ```npm install ```
+9. Navigate to app/: ```cd backend/ ```
+10. Install the dependencies: ```npm install ```
+11. Initialize app: ```nmp start```
+12. Run tests: ```npm run test```
 
 **✨ This project was developed during the Full Stack Web Development course at Trybe**
